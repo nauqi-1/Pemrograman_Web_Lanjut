@@ -31,6 +31,21 @@ Route::get('/posts/{post}/comments/{comment}', function($postId, $commentId) {
     return 'Pos ke-'.$postId." Komentar ke-: ".$commentId;
 });
 
+
+use App\Http\Controllers\POSHomeController;
+Route::get('/home', [POSHomeController::class, 'home']);
+
+use App\Http\Controllers\POSProductsController;
+Route::get('/category/food_beverage', [POSProductsController::class, 'food_beverage']);
+Route::get('/category/beauty_health', [POSProductsController::class, 'beauty_health']);
+Route::get('/category/home_care', [POSProductsController::class, 'home_care']);
+ROute::get('/category/baby_kid', [POSProductsController::class, 'baby_kid']);
+
+use App\Http\Controllers\POSUserController;
+Route::get('/user_pos/{id}/name/{name}', [POSUserController::class, 'user']);
+
+use App\Http\Controllers\POSPenjualanController;
+Route::get('/penjualan', [POSPenjualanController::class, 'penjualan']);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
