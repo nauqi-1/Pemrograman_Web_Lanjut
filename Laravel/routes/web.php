@@ -17,6 +17,8 @@ Route::get('/article/{id?}', [ArticleController::class, 'article']);
 
 Route::resource('photos', PhotoController::class);
 
+Route::get('/greeting', [WelcomeController::class, 'greeting']);
+
 Route::get('/world', function () {
     return 'World';
 });
